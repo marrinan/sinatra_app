@@ -1,0 +1,13 @@
+<<h1>Select an Exercise</h1>
+<% @exercises.each do |exercise| %>
+  <p>  
+    <span><a href="/<%= exercise.id %>"><%= exercise.name %></a></span>  
+  </p>
+<% end %>
+<h1>Submit an Exercise</h1>
+<form action ="/" method="post">
+  <p>Name:<input type="text" name="name"></p>
+  <p>Prompt:<input type="text" name="prompt"></p>
+  <p>Method name:<input type="text" name="method_name"></p>
+  <input type="submit">
+</form>

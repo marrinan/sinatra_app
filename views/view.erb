@@ -1,0 +1,20 @@
+<h1><%= @exercise.prompt %></h1>
+
+<form action="/<% @exercise.id %>" method="get">
+  <input type="text" name="prompt_value">
+  <input type="submit">
+</form>
+
+<% unless params[:prompt_value] == nil %>
+  <% if params[:prompt_value].to_i == 0 %>
+    <% input = params[:prompt_value] %>
+  <% else %>
+    <% input = params[:prompt_value].to_i %>
+  <% end %>
+
+  <%= "The result is: #{ input.send(@exercise.method_name )}" %>
+<% end %>
+
+<p>
+  <a href="/">Index</a>
+</p>
